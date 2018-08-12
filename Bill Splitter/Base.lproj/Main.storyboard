@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill amount to split" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ta0-ar-VEL">
-                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <rect key="frame" x="99" y="70" width="178" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-UR-CvH">
-                                <rect key="frame" x="14" y="58" width="347" height="30"/>
+                                <rect key="frame" x="14" y="108" width="347" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="m6w-9I-dlV"/>
                                 </constraints>
@@ -33,21 +34,8 @@
                                     <action selector="sliderUpdates:" destination="BYZ-38-t0r" eventType="valueChanged" id="sBz-Xe-wSO"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzp-5B-SZo">
-                                <rect key="frame" x="112.5" y="95" width="150" height="30"/>
-                                <state key="normal" title="Calculate Bill Portions"/>
-                                <connections>
-                                    <action selector="calculateBillPortions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIW-ad-vB4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each person pays" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RC6-Zr-ZDu">
-                                <rect key="frame" x="16" y="133" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumberOf People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ2-gM-KmQ">
-                                <rect key="frame" x="119" y="193" width="137" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter bill amount and set slider to number of people" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ2-gM-KmQ">
+                                <rect key="frame" x="-10.5" y="193" width="396" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,28 +43,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RC6-Zr-ZDu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Dz-WK-og4"/>
-                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Jw-zy-J6o"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RC6-Zr-ZDu" secondAttribute="bottom" constant="513" id="5re-ue-ixH"/>
-                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B36-Xs-Twe"/>
-                            <constraint firstItem="RC6-Zr-ZDu" firstAttribute="centerX" secondItem="M3Q-UR-CvH" secondAttribute="centerX" id="Bdu-VW-4di"/>
-                            <constraint firstItem="ta0-ar-VEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GBs-QY-Ri7"/>
-                            <constraint firstItem="RC6-Zr-ZDu" firstAttribute="width" secondItem="ta0-ar-VEL" secondAttribute="width" id="GhU-3f-waZ"/>
-                            <constraint firstItem="ta0-ar-VEL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HLt-nt-M1E"/>
-                            <constraint firstItem="rJ2-gM-KmQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IKk-Gb-5ii"/>
-                            <constraint firstItem="kzp-5B-SZo" firstAttribute="top" secondItem="M3Q-UR-CvH" secondAttribute="bottom" constant="8" symbolic="YES" id="IZH-Mx-mdg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M3Q-UR-CvH" secondAttribute="trailing" constant="16" id="MYE-5G-RiV"/>
-                            <constraint firstItem="kzp-5B-SZo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFH-jH-PMK"/>
-                            <constraint firstItem="RC6-Zr-ZDu" firstAttribute="top" secondItem="kzp-5B-SZo" secondAttribute="bottom" constant="8" symbolic="YES" id="fiE-hk-7AS"/>
-                            <constraint firstItem="rJ2-gM-KmQ" firstAttribute="top" secondItem="RC6-Zr-ZDu" secondAttribute="bottom" constant="39" id="nMX-5e-fcw"/>
-                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="top" secondItem="ta0-ar-VEL" secondAttribute="bottom" constant="8" symbolic="YES" id="oUQ-j4-Ttc"/>
-                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="width" secondItem="ta0-ar-VEL" secondAttribute="width" id="qRx-wy-xkO"/>
+                            <constraint firstItem="rJ2-gM-KmQ" firstAttribute="top" secondItem="M3Q-UR-CvH" secondAttribute="bottom" constant="56" id="6VM-BT-dhv"/>
+                            <constraint firstItem="ta0-ar-VEL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="DSj-rZ-80d"/>
+                            <constraint firstItem="rJ2-gM-KmQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LwW-3g-glT"/>
+                            <constraint firstItem="ta0-ar-VEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jOw-lY-KOn"/>
+                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mY8-i0-osR"/>
+                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="top" secondItem="ta0-ar-VEL" secondAttribute="bottom" constant="8" id="mri-hz-dM6"/>
+                            <constraint firstItem="M3Q-UR-CvH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rDM-2O-whL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="billToSplit" destination="ta0-ar-VEL" id="9gq-pz-AUi"/>
-                        <outlet property="eachPersonPays" destination="RC6-Zr-ZDu" id="70k-Fz-6gK"/>
                         <outlet property="numberOfPeople" destination="M3Q-UR-CvH" id="Hi4-6h-w6f"/>
                         <outlet property="numberOfPeopleDisplay" destination="rJ2-gM-KmQ" id="vJ7-Cl-ZIr"/>
                     </connections>
